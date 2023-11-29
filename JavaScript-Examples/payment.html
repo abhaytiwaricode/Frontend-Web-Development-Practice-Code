@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Payment</title>
+        <script>
+            var userDetails = {
+                CardNumber: "4444555566667788",
+                Cvv: "202",
+                Expiry: "2023"
+            }
+            function VerifyCard(){
+                var txtCard = document.getElementById("txtCard").value;
+                if(txtCard == userDetails.CardNumber) {
+                    document.getElementById("txtCvv").disabled = false;
+                } else {
+                    document.getElementById("txtCvv").disabled = true;
+                }
+            }
+            function VerifyCvv(){
+                var txtCvv = document.getElementById("txtCvv").value;
+                if (txtCvv == userDetails.Cvv) {
+                    document.getElementById("lstYears").disabled = false;
+                } else {
+                    document.getElementById("lstYears").disabled = true;
+                }
+            }
+            function VerifyExpiry(){
+                var lstYears = document.getElementById("lstYears").value;
+                if(lstYears == userDetails.Expiry) {
+                    document.getElementById("btnPay").disabled = false;
+                } else {
+                    document.getElementById("btnPay").disabled = true;
+                }
+            }
+            function PayClick(){
+                var txtCard = document.getElementById("txtCard").value;
+                var txtCvv = document.getElementById("txtCvv").value;
+                var lstYears = document.getElementById("lstYears").value;
+                var msg = document.getElementById("msg");
+                if(txtCard == userDetails.CardNumber) {
+                    if(txtCvv == userDetails.Cvv) {
+                        if(lstYears == userDetails.Expiry) {
+                            msg.innerHTML = "Payment Successful..";
+                        } else {
+                            msg.innerHTML = "Invalid Expiry Year";
+                        }
+                    } else {
+                        msg.innerHTML = "Invalid Cvv";
+                    }
+                } else {
+                    msg.innerHTML = "Invalid Card Number";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Payment Details</legend>
+            <dl>
+                <dt>Card Number</dt>
+                <dd><input type="text" id="txtCard" onkeyup="VerifyCard()"></dd>
+                <dt>CVV</dt>
+                <dd><input type="text" id="txtCvv" size="4" onkeyup="VerifyCvv()" disabled></dd>
+                <dt>Expiry</dt>
+                <dd>
+                    <select id="lstYears" onchange="VerifyExpiry()" disabled>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                    </select>
+                </dd>
+            </dl>
+            <button id="btnPay" disabled onclick="PayClick()">Pay</button>
+        </fieldset>
+        <h3 id="msg" align="center"></h3>
+    </body>
+</html>

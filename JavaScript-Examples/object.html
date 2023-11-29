@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            var products = [
+                {Name: "JBL Speaker", Price: 4500.44, Photo: "../assets/speaker.jpeg"},
+                {Name: "Nike Casuals", Price: 1500.55, Photo: "../assets/Shoe.jpeg"}
+            ]
+            function LoadProducts() {
+                var tbody = document.getElementById("tbody");
+                tbody.innerHTML = "";
+                for(var item of products)
+                {
+                    var tr = document.createElement("tr");
+                    var tdName = document.createElement("td");
+                    var tdPrice = document.createElement("td");
+                    var tdPhoto = document.createElement("td");
+
+                    tdName.innerHTML = item.Name;
+                    tdPrice.innerHTML = item.Price;
+                    
+                    var img = document.createElement("img");
+                    img.src = item.Photo;
+                    img.height = "100";
+                    img.width = "100";
+
+                    tdPhoto.appendChild(img);
+
+                    tr.appendChild(tdName);
+                    tr.appendChild(tdPrice);
+                    tr.appendChild(tdPhoto);
+
+                    tbody.appendChild(tr);
+                }
+            }
+            function bodyload(){
+                LoadProducts();
+            }
+            function AddClick(){
+                var txtName = document.getElementById("txtName").value;
+                var txtPrice = document.getElementById("txtPrice").value;
+                var txtPhoto = document.getElementById("txtPhoto").value;
+                var path =  "../assets/" + txtPhoto.substring(txtPhoto.lastIndexOf("\\")+1);
+                var product = {
+                    Name: txtName,
+                    Price: parseFloat(txtPrice),
+                    Photo: path
+                };
+                products.push(product);
+                alert("Product Added Successfully..");
+                LoadProducts();
+                // alert(JSON.stringify(product));
+            }
+        </script>
+    </head>
+    <body class="container-fluid" onload="bodyload()">
+        <h2>Add Product</h2>
+        <dl>
+            <dt>Name</dt>
+            <dd>
+                <input type="text" id="txtName" class="form-control">
+            </dd>
+            <dt>Price</dt>
+            <dd>
+                <input type="text" id="txtPrice" class="form-control">
+            </dd>
+            <dt>Photo</dt>
+            <dd>
+                <input type="file" id="txtPhoto" class="form-file">
+            </dd>
+            <dd>
+                <button class="btn btn-primary" onclick="AddClick()">Add Products</button>
+            </dd>
+        </dl>
+        <h2>Product Details</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Preview</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </body>
+</html>

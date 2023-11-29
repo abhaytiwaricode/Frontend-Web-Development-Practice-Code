@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Events</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <script>
+    function OpenImage(){
+      window.open('../assets/T-Shirts.jpg','T-Shirt','width=500 height=400');
+    }
+    function DisableRight(){
+      document.oncontextmenu = function(){
+        alert("Right Click not Allowed.");
+        return false;
+      }
+    }
+  </script>
+</head>
+
+<body class="conatiner-fluid" oncontextmenu="DisableRight()" onselect="return false" onselectstart="return false">
+  <div class="mt-4">
+    <h2>Right Click Disabled on this page.</h2>
+    <img ondblclick="OpenImage()" src="../assets/T-Shirts.jpg" width="150" height="150" title="Double Click to view Large">
+  </div>
+</body>
+
+</html>

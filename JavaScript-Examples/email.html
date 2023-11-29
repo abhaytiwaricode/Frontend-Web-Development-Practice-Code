@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <script>
+      function VerifyPassword(){
+        var password = document.getElementById("txtPassword").value;
+        var msg = document.getElementById("msg");
+        if(password.trim()=="abhay24") {
+          msg.innerHTML="Password Verified";
+        } else {
+          msg.innerHTML="Invalid Password";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Your Password :
+    <input type="text" id="txtPassword" onblur="VerifyPassword()">
+    <div id="msg"></div>
+  </body>
+</html>

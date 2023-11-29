@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array Manipulations</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        var cities = ["Delhi", "Hyd", "Chennai"];
+        function loadCities() {
+            var lstCities = document.getElementById("lstCities");
+            lstCities.innerHTML="";
+            for(item of cities) 
+            {
+                var option = document.createElement("option");
+                option.value = item;
+                option.text = item;
+                lstCities.appendChild(option);
+            }
+        }
+        function bodyload() {
+            loadCities();
+        }
+        function AddClick() {
+            var txtCity =  document.getElementById("txtCity");
+            cities.push(txtCity.value);
+            loadCities();
+            alert(`${txtCity.value} Added to List`)
+            txtCity.value="";
+            txtCity.focus();
+        }
+        function RemoveCity() {
+            var selectedCity = document.getElementById("lstCities").value;
+            var cityIndex = cities.indexOf(selectedCity);
+            var status = confirm(`Are you sure, want to delete ${selectedCity} ?`);
+            if(status == true) {
+                cities.splice(cityIndex,1);
+                loadCities();
+                alert(`${selectedCity} Removed Successfully..`);
+            }
+        }
+        function SortCities(){
+            cities.sort();
+            loadCities();
+        }
+    </script>
+  </head>
+  <body onload="bodyload()" class="container-fluid">
+    <h3>Array Manipulations</h3>
+    <div class="mt-3 w-25">
+      <label>Add New City</label>
+      <div class="input-group">
+        <input type="text" id="txtCity" class="form-control">
+        <button class="btn btn-primary" onclick="AddClick()">Add</button>
+      </div>
+    </div>
+    <div class="mt-3 w-25">
+      <label>Cities List</label>
+      <div>
+        <select class="form-select" size="3" id="lstCities">
+
+        </select>
+      </div>
+    </div>
+    <div class="mt-2">
+      <div class="btn-group">
+        <button class="btn btn-danger" onclick="RemoveCity()"> <span class="bi bi-trash"></span> Remove City </button>
+        <button class="btn btn-success" onclick="SortCities()"> <span class="bi bi-sort-alpha-down"></span> Sort </button>
+      </div>
+    </div>
+  </body>
+</html>

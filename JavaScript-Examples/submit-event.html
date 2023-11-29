@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+      function PostData(){
+        var data = {  
+          UserName: document.getElementById("UserName").value,
+          Password: document.getElementById("Password").value,
+          Email: document.getElementById("Email").value,
+          City: document.getElementById("lstCities").value
+        };
+        console.log(JSON.stringify(data));
+        document.write("Form Submitted.");
+      }
+      function ResetForm(){
+        alert("Form will Reset");
+      }
+      function CityChange(){
+        document.getElementById("frmRegister").submit();
+        PostData();
+      } 
+    </script>
+  </head>
+  <body class="container-fluid">
+    <div class="mt-4">
+      <form onsubmit="PostData()" onreset="ResetForm()" id="frmRegister">
+        <dl>
+          <dt>User Name</dt>
+          <dd><input type="text" id="UserName"></dd>
+          <dt>Password</dt>
+          <dd><input type="password" id="Password"></dd>
+          <dt>Email</dt>
+          <dd><input type="email" id="Email"></dd>
+          <dt>Select City</dt>
+          <dd>
+            <select id="lstCities" onchange="CityChange()">
+              <option>Delhi</option>
+              <option>Hyderabad</option>
+              <option>Lucknow</option>
+              <option>Noida</option>
+            </select>
+          </dd>
+        </dl>
+        <button>Register</button>
+        <button type="reset">Reset</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Output</title>
+  <script>
+    function bodyload() {
+      username = prompt("Enter Your Name");
+      if(username==null){
+        document.write("You Canceled!");
+      } else if(username=="") {
+        document.write("Name Can't be Empty!");
+      } else {
+        document.write("Hello! " + username)
+      }
+    }
+  </script>
+</head>
+<body onload="bodyload()">
+  
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nested Iterations</title>
+        <script>
+            var categories = [
+                {Category: "Electronics", Products: ["Earpods", "Speaker"]},
+                {Category: "Footwear", Products: ["Nike", "Addidas"]}
+            ];
+            function LoadCategories(){
+                var lstCategories = document.getElementById("lstCategories");
+                for(var item of categories)
+                {
+                    var li = document.createElement("li");
+                    li.innerHTML = item.Category;
+                    lstCategories.append(li);
+
+                    var ul = document.createElement("ul");
+                   for(var product of item.Products)
+                   {
+                     var innerLi = document.createElement("li");
+                     innerLi.innerHTML = product;
+                     ul.appendChild(innerLi);
+                   }
+                   li.appendChild(ul);
+                }
+            }
+        </script>
+    </head>
+    <body onload="LoadCategories()">
+        <ol id="lstCategories">
+
+        </ol>
+    </body>
+</html>

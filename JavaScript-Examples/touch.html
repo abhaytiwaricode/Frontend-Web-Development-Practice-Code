@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Touch Events</title>
+    <script>
+      function Unlock(e){
+        var btnUnlock = document.getElementById("btnUnlock");
+        btnUnlock.style.position = "fixed";
+        btnUnlock.style.left = e.touches[0].clientX + "px";
+        if(Math.round(e.touches[0].clientX)>200) {
+          document.write(`
+            <img src="../assets/T-Shirts.jpg"> 
+          `);
+        }
+      }
+    </script>
+  </head>
+  <body ontouchmove="Unlock(event)">
+    <span id="btnUnlock" style="width: 200px; background-color: slategrey; color: white; padding: 10px;">Unlock >> </span>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KFC Online Order</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    </head>
+    <body class="container-fluid">
+        <header>
+            <img src="../assets/kfctop.png" class="d-block w-100" height="190">
+        </header>
+        <div class="accordion" id="kfcform">
+            <div class="accordion-item">
+                <h2 class="accordion-header d-grid">
+                    <button class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="Customer">
+                        Customer Info 
+                    </button>
+                </h2>
+                <div id="Customer" class="collapse show accordion-collapse" data-bs-parent="kfcform">
+                    <div class="accordion-body">
+                        <dl>
+                            <dt>Customer Name</dt>
+                            <dd>
+                                <input type="text" id="txtName" class="form-control">
+                            </dd>
+                            <dt>Mobile Number</dt>
+                            <dd>
+                                <input type="text" id="txtMobile" class="form-control">
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </body>
+</html>

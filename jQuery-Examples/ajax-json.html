@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ajax</title>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $(function(){
+      var now =  new Date();
+      $("#time").html(now);
+      $("#loadData").click(function(){
+        $.getJSON("../data/products.json")
+        .done(function(data){
+          $.each(data,function(property,value){
+            $(`<tr><td>${value.Name}</td><td>${value.Price}</td><td>${(value.Stock == true)?"Available":"Out of Stock"}</td></tr>`).appendTo("tbody");
+          })
+        })
+        .fail(function () {
+          alert("Something Went Wrong");
+        })
+      })
+      $("#loadFile").click(function(){
+          $.ajax({
+            url: '../data/help.txt',
+            success: function(data){
+              $("#container").html(data);
+            },
+            error: function(xhr, status, error){
+              if (xhr.status == 404) {
+                $("#container").html("File you requested - Not Found");
+              }
+            }
+          })
+        })
+      })
+      .ajaxStart(function(){
+          alert("Ajax Request Started..");
+      })
+      .ajaxComplete(function(){
+        alert("Request Completed..");
+      })
+      .ajaxSuccess(function(){
+        alert("Data Fetched Successfully..");
+      })
+      .ajaxError(function(){
+        alert("Something Went Wrong..");
+      })
+  </script>
+</head>
+<body>
+  <p id="time"></p>
+  <button id="loadData">Show Data</button>
+  <br> <br>
+  <table width="400" border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+  <br> <br>
+  <button id="loadFile">Load File</button>
+  <br> <br>
+  <div id="container"></div>
+</body>
+</html>

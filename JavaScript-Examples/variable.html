@@ -1,0 +1,66 @@
+<!-- <script>
+  "use strict";
+  function f1(){
+    var x;  //declaring
+    x = 10; //assigning
+    if(x == 10) 
+    {
+      var y = 20; // initialization
+      var y;
+      y = 40; //shadowing
+    }
+    document.write("X=" + x + "<br>" + "Y=" + y)
+  }
+  f1();
+</script> -->
+
+<!-- <script>
+  "use strict";
+  function f1(){
+    x = 10;
+    document.write("X=" + x);
+    var x; //hoisting
+  }
+  f1();
+</script> -->
+
+<!-- <script>
+  "use strict";
+  function f1(){
+    let x;
+    x = 10;
+    if(x == 10) {
+      let y = 20;
+      document.write("X=" + x + "<br>" + "Y=" + y)
+    }
+    
+  }
+  f1();
+</script> -->
+
+<!-- <script>
+  //module scope
+  var x = 10;
+  let y = 20;
+  const z = 30;
+  function f1() {
+    document.write("Function 1 -  X=" + x + "<br> Y=" + y + "<br> Z=" + z + "<br>");
+  }
+  function f2() {
+    document.write("Function 2 -  X=" + x + "<br> Y=" + y + "<br> Z=" + z);
+  }
+  f1();
+  f2();
+</script> -->
+
+<script>
+  //module scope
+  function f1() {
+   window.x = 10;
+  }
+  function f2() {
+    document.write("X=" + x);
+  }
+  f1();
+  f2();
+</script>

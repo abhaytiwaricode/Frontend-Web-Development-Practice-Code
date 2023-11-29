@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List</title>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $(function () {
+      var data = [
+        {Category: "Electronics", Products: ["Tv","Mobile"]},
+        {Category: "Footwear", Products: ["Nike Casuals","Lee Boot"]},
+        {Category: "Fashion", Products: ["Shirt","Jeans"]},
+      ];
+      $.each(data, function (property, value) {
+        $(`<li>${value.Category}</li>`).appendTo("ol");
+        $.each(value.Products, function(key,val){
+          $(`<ul><li>${val}</li></ul>`).appendTo("ol");
+        })
+      })
+    })
+  </script>
+</head>
+<body>
+  <ol>
+
+  </ol>
+</body>
+</html>

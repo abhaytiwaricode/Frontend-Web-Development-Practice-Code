@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Decision</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            var userDetails = {
+                UserName: "abhay",
+                Password: "12345"
+            }
+            function LoginClick(){
+                var username = document.getElementById("txtName").value;
+                var password = document.getElementById("txtPwd").value;
+                var msg = document.getElementById("msg");
+                if(username == "") {
+                    msg.innerHTML = "User Name Required";
+                } 
+                else {
+                    if (username == userDetails.UserName) 
+                    {
+                        if (password == userDetails.Password) {
+                            msg.innerHTML = "Login Please Wait..";
+                        } 
+                        else {
+                            msg.innerHTML = "Invalid Password";
+                        }
+                    }
+                    else {
+                        msg.innerHTML = "Invalid User Name";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+            <h3>User Login</h3>
+            <dl class="form-control w-25">
+                <dt>User Name</dt>
+                <dd><input class="form-control" type="text" id="txtName"></dd>
+                <dt>Password</dt>
+                <dd><input class="form-control" type="password" id="txtPwd"></dd>
+            </dl>
+            <button onclick="LoginClick()" class="btn btn-primary w-25">Login</button>
+            
+            <h3 align="center" id="msg"></h3>
+    </body>
+</html>

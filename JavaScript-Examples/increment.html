@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function GetAmount() {
+            document.getElementById("txtAmount").value = document.getElementById("rangeAmount").value;
+        }
+    </script>
+</head>
+
+<body class="container-fluid">
+    <div class="container mt-3">
+        <div class="input-group w-25">
+            <span class="input-group-text">&#8377;</span>
+            <input type="text" size="5" class="form-control w-25" value="1000" id="txtAmount">
+        </div>
+        <div>
+            <input type="range" onchange="GetAmount()" min="1000" max="500000" value="1000" class="form-range w-25"
+                id="rangeAmount">
+        </div>
+    </div>
+</body>
+
+</html>

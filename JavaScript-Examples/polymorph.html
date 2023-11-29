@@ -1,0 +1,52 @@
+<script>
+  class Employee {
+    FirstName;
+    LastName;
+    Designation;
+    Print() {
+      document.write(`First Name : ${this.FirstName}<br>Last Name : ${this.LastName}<br>Designation : ${this.Designation}<br>`);
+    }
+  }
+  class Developer extends Employee {
+    FirstName = "Aman";
+    LastName = "Singh";
+    Designation = "Software Developer";
+    Role = "Building, Debugging, Testing";
+    Print() {
+      super.Print();
+      document.write(`Role : ${this.Role}`);
+    }
+  }
+  class Admin extends Employee {
+    FirstName = "Raj";
+    LastName = "Singh";
+    Designation = "Admin";
+    Role = "Authorization, Authentication";
+    Print() {
+      super.Print();
+      document.write(`Role : ${this.Role}`);
+    }
+  }
+  class Manager extends Employee {
+    FirstName = "Abhay";
+    LastName = "Tiwari";
+    Designation = "Manager";
+    Role = "Approvals";
+    Print() {
+      super.Print();
+      document.write(`Role : ${this.Role}`);
+    }
+  }
+  // let employees = [new Developer(), new Admin(), new Manager()];
+  let employees = new Array();
+  employees[0] = new Developer();
+  employees[1] = new Admin();
+  employees[2] = new Manager();
+  let designation = prompt("Enter Designation!");
+  for (var employee of employees) {
+    if (employee.Designation == designation) {
+      employee.Print();
+    }
+  }
+  
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grid</title>
+        <style>
+            .container {
+                display: grid;
+                grid-template-columns: 2fr 10fr;
+                grid-gap: 50px;
+            }
+            #header {
+                grid-row: 1;
+                grid-column: 2;
+                border: 2px solid;
+            }
+            #footer {
+                grid-row: 3;
+                grid-column: 2;
+                border: 2px solid;
+            }
+            #section {
+                grid-row: 2;
+                grid-column: 2;
+                height: 400px;
+            } 
+            #nav {
+                grid-row: 2;
+                grid-column: 1;
+                border: 2px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="header">
+                Amazon shopping
+            </div>
+            <div id="section">
+                <p>Depending on how you obtained the Windows software, this is a license agreement between (i) you and the device manufacturer or software installer that distributes the software with your device; or (ii) you and Microsoft Corporation (or, based on where you live or, if a business, where your principal place of business is located, one of its affiliates) if you acquired the software from a retailer. Microsoft is the device manufacturer for devices produced by Microsoft or one of its affiliates, and Microsoft is the retailer if you acquired the software directly from Microsoft. Note that if you are a volume license customer, use of this software is subject to your volume license agreement rather than this agreement.</p>
+            </div>
+            <div id="footer">
+                &copy; copyright 2023
+            </div>
+            <div id="nav">
+                <ul>
+                    <li>Home</li>
+                    <li>Electronics</li>
+                    <li>Footwear</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

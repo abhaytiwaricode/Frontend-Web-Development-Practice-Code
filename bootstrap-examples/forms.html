@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forms</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+      .box-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body class="container-fluid">
+    <!-- <h3>Register User</h3> -->
+    <div class="box-center">
+      <div>
+        <div class="mt-3">
+          <label class="form-label">User Name</label>
+          <div>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="mt-3">
+          <label class="form-label">Password</label>
+          <div>
+            <input type="password" class="form-control">
+          </div>
+        </div>
+        <div class="mt-3">
+          <label class="form-label">Date of Birth</label>
+          <div>
+            <input type="date" class="form-control">
+          </div>
+        </div>
+        <div class="mt-3">
+          <label class="form-label">Select City</label>
+          <div>
+            <select class="form-select">
+              <option>Noida</option>
+              <option>Delhi</option>
+              <option>Lucknow</option>
+              <option>Sitapur</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-3">
+          <label class="form-label">Gender</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio"name="Gender"> <span class="form-check-label">Male</span>
+            <br>
+            <input class="form-check-input" type="radio"name="Gender"> <span class="form-check-label">Female</span>
+          </div>
+        </div>
+        <div class="mt-3">
+          <label class="form-label">Select Course</label>
+          <div class="form-check form-switch">
+            <div>
+              <input type="checkbox" checked class="form-check-input">Java
+            </div>
+            <div>
+              <input type="checkbox" class="form-check-input">.NET
+            </div>
+          </div> 
+          <div class="mt-3">
+            <label class="form-label">Upload Photo</label>
+            <div>
+              <input type="file" class="form-control-file">
+            </div>
+          </div>
+          <div class="mt-3">
+            <label class="form-label">Price Range</label>
+            <div>
+              <input type="range" min="1" max="100" value="1" class="form-range">
+            </div>
+          </div>
+          <div class="mt-3 d-grid">
+            <button class="btn btn-primary">Register</button>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

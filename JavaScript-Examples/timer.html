@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Timer Events</title>
+  <script>
+    function m1() {
+      document.getElementById("msg").innerHTML = "Hello - Message 1";
+    }
+    function m2() {
+      document.getElementById("msg").innerHTML = "How are you? - Message 2";
+    }
+    function m3() {
+      document.getElementById("msg").innerHTML = "Welcome to JavaScript - Message 3";
+    }
+    var msg1, msg2, msg3;
+    function bodyload() {
+      msg1 = setTimeout(m1, 4000)
+      msg2 = setTimeout(m2, 7000)
+      msg3 = setTimeout(m3, 10000)
+    }
+    function CancelClick() {
+      clearTimeout(msg2);
+    }
+  </script>
+</head>
+
+<body onload="bodyload()">
+  <h1 align="center" id="msg"></h1>
+  <button onclick="CancelClick()">Cancel Message 2</button>
+</body>
+
+</html>

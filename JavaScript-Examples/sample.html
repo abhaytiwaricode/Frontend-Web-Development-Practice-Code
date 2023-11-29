@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>String property</title>
+    <script>
+      function VerifyPassword() {
+        var password = document.getElementById("txtPwd").value;
+        var msg = document.getElementById("msg");
+        var regExp=/(?=.*[A-Z])\w{4,15}/;
+        if(password.match(regExp))
+        {
+          msg.innerHTML="Strong Password";
+        } else {
+          if(password.length<4)
+          {
+            msg.innerHTML="Poor Password";
+          } else {
+            msg.innerHTML="Weak Password";
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Password</legend>
+      <input type="password" name="txtPwd" onkeyup="VerifyPassword()">
+      <span id="msg"></span>
+    </fieldset>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shopping</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <style>
+    #productsContainer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 300px;
+    }
+  </style>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $(function () {
+      var categories = [];
+      // var products = []; for make it global inside a function LoadProducts Use window
+      // var searchedProducts = []; it is also empty here we need to use callback technique
+      function LoadCategories() {
+        $.ajax({
+          method: "GET",
+          url: "https://fakestoreapi.com/products/categories",
+          success: function (response) {
+            categories = response;
+            $.each(categories, function (key, value) {
+              $(`<option value="${value}">${value.toUpperCase()}</option>`).appendTo("#lstCategories");
+            });
+          },
+          error: function (xhr) {
+            console.log(xhr.statusText);
+          }
+        });
+      }
+      LoadCategories();
+
+      function LoadProductsIntoBody(data) {
+        $.each(data, function (key, item) {
+          $(`
+                <div class="card">
+                  <img src=${products.image} height="150" class="card-img-top">
+                  <div class="card-header">
+                    <h3>${products.title}</h3>
+                    <p>&#8377; ${products.price}</p>
+                  </div>
+                  <div class="card-body">
+                    <p>${products.description}</p>
+                  </div>
+                  <div class="card-footer d-grid">
+                    <button id="btnAdd" class="btn btn-danger">
+                      <span class="bi bi-cart4"></span> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              `).appendTo("#ProductsContainer");
+        })
+      }
+
+      function LoadProducts() {
+        $.ajax({
+          method: "GET",
+          url: "https://fakestoreapi.com/products",
+          success: function (response) {
+            window.products = response;
+            LoadProductsIntoBody(products);
+          }
+        });
+      }
+      LoadProducts();
+
+      $("#lstCategories").change(function () {
+
+        var selectedCategory = $("#lstCategories").val().toLowerCase();
+        var searchedProducts = products.filter(item => item.category == selectedCategory);
+        //console.log(JSON.stringify(searchedProducts));
+        $("#ProductsContainer").html("");
+        LoadProductsIntoBody(searchedProducts);
+      })
+    })
+  </script>
+</head>
+
+<body class="container-fluid">
+  <header class="bg-danger text-white text-center p-2">
+    <h2><span class="bi bi-cart"></span> Shopping - Online</h2>
+  </header>
+  <div class="mt-3 row">
+    <div class="col-3">
+      <div class="mt-2">
+        <label class="form-label">Select a Category</label>
+        <select id="lstCategories" class="form-select">
+
+        </select>
+      </div>
+    </div>
+    <div class="col-9">
+      <div id="ProductsContainer" style="height: 500px; overflow: auto;">
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

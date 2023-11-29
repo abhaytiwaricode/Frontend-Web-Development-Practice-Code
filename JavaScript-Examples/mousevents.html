@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Events</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script>
+    function ShowOffer(){
+      document.getElementById("pic").src="../assets/T-Shirts1.jpg";
+    }
+    function HideOffer(){
+      document.getElementById("pic").src="../assets/T-Shirts.jpg";
+    }
+  </script>
+</head>
+
+<body class="conatiner-fluid">
+  <div class="mt-3">
+    <img id="pic" src="../assets/T-Shirts.jpg" onmousedown="ShowOffer()" onmouseup="HideOffer()" width="300" height="200">
+  </div>
+</body>
+
+</html>

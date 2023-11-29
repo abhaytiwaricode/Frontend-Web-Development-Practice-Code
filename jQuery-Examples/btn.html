@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery</title>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $(function () {
+      $("#btnShow").click(function(){
+        $("#msg").html("Welcome to jQuery");
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <button id="btnShow">Show Message</button>
+  <h3 id="msg"></h3>
+</body>
+
+</html>

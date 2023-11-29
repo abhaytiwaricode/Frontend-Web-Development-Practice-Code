@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operators</title>
+        <script>
+            function AddClick(){
+                document.getElementById("msg").innerHTML += "Folder Created : " + document.getElementById("txtName").value + "<br>";
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            Folder Name :
+            <input type="text" id="txtName">
+            <button onclick="AddClick()">Add</button>
+        </div>
+        <div id="msg"></div>
+    </body>
+</html>

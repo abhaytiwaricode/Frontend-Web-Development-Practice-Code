@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script>
+    var users = [
+      {
+        UserName: 'abhay'
+      },
+      {
+        UserName: 'raj'
+      },
+      {
+        UserName: 'aman'
+      }
+    ]
+    function VerifyUser() {
+      var username = document.getElementById("txtName").value;
+      var msg = document.getElementById("msg");
+      for (var user of users) {
+        if (user.UserName == username) {
+          msg.innerHTML = "Username Not Available";
+          msg.style.color = "red";
+          break;
+        } else {
+          msg.innerHTML = "Username Available";
+          msg.style.color = "green";
+        }
+      }
+    }
+  </script>
+</head>
+<body class="container-fluid">
+  <fieldset>
+    <legend>Register User - </legend>
+    <dl class="form-control w-25">
+      <dt class="form-text">User Name</dt>
+      <dd><input type="text" id="txtName" class="form-control" onkeyup="VerifyUser()"></dd>
+      <dd id="msg"></dd>
+    </dl>
+  </fieldset>
+</body>
+</html>

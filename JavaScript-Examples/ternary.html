@@ -1,0 +1,24 @@
+<script>
+    function f1(){
+        var product = {
+            Name: "TV",
+            Price: 45000.44,
+            Stock: false
+        }
+        delete product.Price;
+        if(product.Price == undefined){
+            document.write(`
+            Name = ${product.Name}<br>
+            Stock = ${(product.Stock == true) ? "Available" : "Out of Stock"}
+        `);
+        } else {
+            document.write(`
+            Name = ${product.Name}<br>
+            Price = ${product.Price}<br>
+            Stock = ${(product.Stock == true) ? "Available" : "Out of Stock"}
+        `);
+        }
+        
+    }
+    f1();
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timer</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+      var products = [
+        {Name: "JBL Speaker", Photo: "../assets/speaker.jpeg"},
+        {Name: "Earpods", Photo: "../assets/earpods.jpg"},
+        {Name: "Nike Casuals", Photo: "../assets/Shoe.jpeg"},
+        {Name: "Adidas Casuals", Photo: "../assets/Shoe.jpg"},
+        {Name: "T-Shirts Combo", Photo: "../assets/T-Shirts.jpg"},
+        {Name: "T-Shirts Combo", Photo: "../assets/T-Shirts1.jpg"}
+      ];
+      function GetProduct(index){
+        document.getElementById("lblName").innerHTML = products[index].Name;
+        document.getElementById("pic").src = products[index].Photo;
+      }
+      var count = 0;  
+      function SlideShow(){
+        count++;
+        GetProduct(count);
+      }
+      function bodyload(){
+        GetProduct(0);
+      }
+      var show;
+      function StartClick(){
+        show = setInterval(SlideShow,5000);
+        document.getElementById("lblStatus").innerHTML = "Slide Show - Started";
+      }
+      function PauseClick(){
+        clearInterval(show);
+        document.getElementById("lblStatus").innerHTML = "Slide Show - Paused";
+      }
+    </script>
+  </head>
+  <body onload="bodyload()" class="container-fluid">
+    <div class="card mt-3">
+      <div class="card-header text-center">
+        <h2 id="lblName"></h2>
+        <p id="lblStatus"></p>
+      </div>
+      <div class="card-body text-center">
+        <img id="pic" width="80%" height="350">
+      </div>
+      <div class="card-footer text-center">
+        <button class="btn btn-success" onclick="StartClick()">
+          <span class="bi bi-play-btn-fill"></span>
+        </button>
+        <button class="btn btn-danger" onclick="PauseClick()">
+          <span class="bi bi-pause-btn-fill"></span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

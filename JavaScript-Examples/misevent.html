@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Events</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <script>
+    function ShowMessage(){
+      document.getElementById("msg").style.display = "block";
+    }
+    function HideMessage(){
+      document.getElementById("msg").style.display = "none";
+      var txtName = document.getElementById("txtName").value;
+      document.getElementById("txtName").value = txtName.toUpperCase();
+      document.getElementById("txtEmail").focus();
+    }
+  </script>
+</head>
+
+<body class="container-fluid w-50">
+  <div class="mt-4">
+  <fieldset>
+    <legend>User Name</legend>
+    <input type="text" onfocus="ShowMessage()" onblur="HideMessage()" class="form-control" id="txtName">
+    <div id="msg" style="display: none;">
+      Name in Block Letters Only
+    </div>
+    <legend>Password</legend>
+    <input type="password" id="txtPwd" class="form-control">
+    <legend>Email</legend>
+    <input type="email" id="txtEmail" class="form-control">
+  </fieldset>
+  </div>
+</body>
+
+</html>

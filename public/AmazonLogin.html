@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Amazon Login</title>
+        <style>
+            .container {
+                border: 1px solid gray;
+                border-radius: 5px;
+                width: 400px;
+                height: 400px;
+                justify-content: center;
+                margin: auto;
+                padding: 40px;
+            }
+            h1 {
+                font-family: sans-serif;
+                font-weight: lighter;
+            }
+            label {
+                font-weight: bold;
+                font-family: Arial;
+            }
+            .form-control {
+                width: 100%;
+                height: 30px;
+                border-radius: 5px;
+                border: 2px solid orange;
+                margin-top: 5px;
+            }
+            .btn {
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+                background-color: lightyellow;
+                margin-top: 10px;
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+            a {
+                text-decoration: none;
+                font-size: 18px;
+            }
+        </style> 
+    </head>
+    <body>
+        <div>
+            <img src="../assets/amazon-logo.png" width="150" height="50">
+        </div>
+        <div class="container">
+            <h1 align="left">Sign-in</h1>
+            <div class="form-group">
+                <label>Email or mobile phone number</label>
+                <div>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn">Continue</button>
+            </div>
+            <div class="form-group">
+                <p>By continuing, you agree to Amazon's<a href="#">Conditions of Use </a>and Privacy Notice.</p>
+            </div>
+            <div class="form-group">
+                <details>
+                    <summary><a href="#">Need Help?</a></summary>
+                    <p><a href="#">Recover Password</a></p>
+                    <p><a href="#">Edit Account details</a></p>
+                </details>
+        </div>
+        </div>
+    </body>
+</html>

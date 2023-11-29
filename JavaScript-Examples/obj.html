@@ -1,0 +1,61 @@
+<style>
+    dt {
+        font-weight: bold;
+        background-color: gray;
+        color: white;
+
+    }
+
+    dl {
+        width: 300px;
+        border: 2px solid;
+        padding: 20px;
+    }
+</style>
+<script>
+    function f1() {
+        var product = {
+            Name: '',
+            Price: 0,
+            Stock: false,
+            Qty: 0,
+            ShippedTo: [],
+            Total: function () {
+                return this.Qty * this.Price
+            },
+            Print: function () {
+                document.write(`
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>${this.Name}</dd>
+                        <dt>Price</dt>
+                        <dd>${this.Price}</dd>
+                        <dt>Stock</dt>
+                        <dd>${(this.Stock == true) ? "Available" : "Out of Stock"}</dd>
+                        <dt>Qty</dt>
+                        <dd>${this.Qty}</dd>
+                        <dt>Total</dt>
+                        <dd>${this.Total()}</dd>
+                        <dt>Shipped To</dt>
+                        <dd>${this.ShippedTo.toString()}</dd>
+                    </dl>    
+                `)
+            }
+        }
+
+        product.Name = "Samsung TV";
+        product.Price = 59999.66;
+        product.Qty = 2;
+        product.Stock = true;
+        product.ShippedTo = ["Hyd", "Delhi"];
+        product.Print();
+
+        product.Name = "OnePlus TV";
+        product.Price = 10000.44;
+        product.Qty = 4;
+        product.Stock = true;
+        product.ShippedTo = ["Hyd", "Delhi", "Lucknow"];
+        product.Print();
+    }
+    f1();
+</script>

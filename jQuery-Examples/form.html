@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $(function () {
+      $("#btnRegister").click(function () {
+        $("#lblName").html($("#txtName").val());
+        $("#lblPrice").html($("#txtPrice").val());
+        $("#lblShippedTo").html($("#optShippedTo").val());
+        var isStockChecked = $("#optStock").prop("checked");
+        $("#lblStock").html(`${(isStockChecked) == true ? "Available" : "Out of Stock"}`);
+      })
+    })                                                
+  </script>
+</head>
+
+<body class="container-fluid">
+  <div class="row mt-4">
+    <div class="col-3">
+      <h3>Register Product</h3>
+      <dl>
+        <dt>Name</dt>
+        <dd><input type="text" class="form-control" id="txtName"></dd>
+        <dt>Price</dt>
+        <dd><input type="text" class="form-control" id="txtPrice"></dd>
+        <dt>Shipped To</dt>
+        <dd>
+          <select class="form-select" id="optShippedTo">
+            <option>Select City</option>
+            <option>Delhi</option>
+            <option>Noida</option>
+            <option>Lucknow</option>
+            <option>Sitapur</option>
+          </select>
+        </dd>
+        <dt>In Stock</dt>
+        <dd class="form-check form-switch">
+          <input type="checkbox" id="optStock" class="form-check-input"> Yes
+        </dd>
+      </dl>
+      <div class="d-grid">
+        <button id="btnRegister" class="btn btn-primary">Register</button>
+      </div>
+    </div>
+    <div class="col-9">
+      <h3>Product Details</h3>
+      <dt>Name</dt>
+      <dd id="lblName"></dd>
+      <dt>Price</dt>
+      <dd id="lblPrice"></dd>
+      <dt>Shipped To</dt>
+      <dd id="lblShippedTo"></dd>
+      <dt>Stock</dt>
+      <dd id="lblStock"></dd>
+    </div>
+  </div>
+</body>
+
+</html>

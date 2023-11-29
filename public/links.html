@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Intra Document</title>
+        <style>
+            ul {
+                list-style: none;
+                display: flex;
+            }
+            li {
+                margin-top: 50px;
+                border: 2px solid;
+                padding: 4px;
+                text-align: center;
+                width: 300px;
+                background-color: tomato;
+                color: white;
+            }
+            a {
+                color: white;
+                text-decoration: none;
+            }
+            .topic {
+                border: 2px solid darkcyan;
+                background-color: lightcyan;
+                padding: 10px;
+                margin-bottom: 20px;
+                margin: 20px;
+            }
+            .topic:target {
+                background-color: black;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#html">HTML</a></li>
+                    <li><a href="#css">CSS</a></li>
+                    <li><a href="#js">JavaScript</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div id="html" class="topic">
+                <h2>HTML</h2>
+                <p>It is a markup language.</p>
+            </div>
+            <div id="css" class="topic">
+                <h2>CSS</h2>
+                <p>It defines styles for HTML elements.</p>
+            </div>
+            <div id="js" class="topic">
+                <h2>JavaScript</h2>
+                <p>It is used to handle client side interactions.</p>
+            </div>
+        </section>
+    </body>
+</html>

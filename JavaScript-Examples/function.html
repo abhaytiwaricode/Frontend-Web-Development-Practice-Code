@@ -1,0 +1,34 @@
+<script>
+  function f1()
+  {
+    function PrintProduct(id, name, price, stock) 
+    {
+      document.write(`
+        Id = ${id}<br>
+        Name = ${name}<br>
+        Price = ${price}<br>
+        Stock = ${(stock) == true? "Available" : "Out of Stock"}<br>
+      `)
+    }
+    PrintProduct(1, "Russian", 6000.99, false);
+    document.write("<hr>");
+    PrintProduct(2, "Brazilian", 5000.99, true);
+  }
+  f1();
+</script>
+
+
+
+<!-- <script>
+  function f1(){
+    var actions = [function(){document.write("Success..")}, function(){document.write("Invalid")}];
+    var [success, failure] = actions;
+    var password = prompt("Enter Password");
+    if(password == "abhay24") {
+      success();
+    } else {
+      failure();
+    }
+  }
+  f1();
+</script> -->

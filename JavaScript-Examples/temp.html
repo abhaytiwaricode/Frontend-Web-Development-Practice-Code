@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number</title>
+    <script>
+      function VerifyAge() {
+        var txtAge = document.getElementById("txtAge").value;
+        var age = parseInt(txtAge);
+        var msg = document.getElementById("msg");
+        if((typeof age) == "number"){
+          msg.style.display="none";
+        } else {
+          msg.style.display="inline";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Age</legend>
+      <input type="text" id="txtAge" onblur="VerifyAge()">
+      <span id="msg" style="display: none;">Age must be a number</span>
+    </fieldset>
+  </body>
+</html>

@@ -1,0 +1,328 @@
+         React.js
+
+- JavaScript Library for building UI
+- It uses Virtual DOM for manipulation
+- Faster
+- Component Based
+- Open Source
+- Cross Platform
+- SPA
+- Async [Modular Approach]
+- Application specific framework
+- One way data binding
+- only for UI
+	  axios
+	  react native
+	  redux
+- Fast pace of building
+
+2014 2021 - 17.0.2 version	- React
+2013 2021 - 11 version	- Angular
+
+	      React Library 
+
+- react		base library
+- react-dom	virtual dom
+- babel/standalone	compiler
+
+
+"String" + (a+b)
+`String ${a+b}` -> JSX       - JavaScript XML
+
+	        Module System
+
+- cjs
+- umd	- node.js npm - react
+- amd
+
+JSX - will not allow void elements, hence you have to 		
+define them as self ending - <img />, <br />
+
+Dynamic value can't bind with attribute, it requires property - 
+<table width="" height="" border="" align="" class="">
+
+document.getElementById("table").width = "100";
+			          .height = 300; //invalid
+			           .class = "effects" //invalid
+			           .className 
+
+FAQ : what is the difference b/w React.createElement() & document.createElement()?
+
+React.createElement()	- create element in virtual DOM
+document.createElement()	- create element in actual DOM
+
+	        React Components
+
+- component comprises of design, logic and styles
+- design - HTML
+- logic - JSX
+- style - CSS
+- reusable
+- light weight
+- testable
+- 3rd Party components : Telerik, Material UI, etc..
+
+- Custom Components
+	- depending on situation we use these.
+
+	a- Functional Components	: JavaScript Function
+	b- Class Components	: JavaScript Class
+	
+	      Functional Components
+- function
+- anonymous type
+
+	var componentName= function() {}		- create
+	<componentName>	</componentName>	- use
+	var head = function(){} 	- you should not use html ele. name
+				- lowercase or Pascal Case
+- problems
+- these are treated as =>
+			- Stateless Behavior ( can't hold data )
+      - the memory will be erased after using
+      - can't transport data from one component to other
+      - JavaScript Function 
+      - can't extend
+      - tightly coupled
+      - hard to test
+      - Example = fn.component.js file
+
+- functional component requires round trip - that is the reason it slow
+- by using parameters (that means that are parameterized components).
+      - Example = para.fn.js file
+
+		      Class Components
+
+- these are treated as =>
+			- Stateful 
+      - - Example = cl.component.js file
+
+- functional component not requires round trip - that is the reason it fast
+
+React 16+ version - Hook
+    "use state" hook - maintain state for component,[functional,class works for both components]
+    16.8 - Functional components - can also have state
+      UseState from 'react'
+
+      destructing array
+        var collection = ["a","b"];
+        var [a,b] = collection;
+
+Module System  
+  - .js
+  - amd
+  - common js
+  - umd
+  - require
+
+React Events all are same as JavaScript browser events
+what is Events?
+what is Event Handler?
+what is event args?
+
+  - Clipboard Events
+  - Composition Events
+  - Key Events
+  - Focus Events
+  - Mouse Events
+  - Pointer Events
+  - Selection Events
+  - Touch Events
+  - UI Events
+  - Wheel Events
+  - Media Events
+  - Image Events
+  - Animations Events
+  - Transitions Events
+  - Timer Events
+
+UnControlled Component : interaction using DOM
+  - No binding with state
+Controlled Component : uses state with event binding
+
+  Conditional Rendering 
+
+      if(condition)
+      {
+        presentation
+      }
+      else
+      {
+        presentation
+      }
+
+Forms and Validation
+Routing
+
+Forms in React 
+
+  Rest Parameters -   ...param
+
+3rd Party Library for React - formik
+
+  Module System Support
+
+React - umd, amd
+formik - cjs
+
+Yup library validation methods
+formik
+
+Route - Missing
+
+API - Server Side
+
+M E R N Stack -
+  End to End
+  -Database
+  -Server Side
+  -Middleware
+  -React
+
+Download and Install MongoDB Database on your PC
+
+Mongo - Cloud [AWS,Azure]
+
+Do you want MongoDB Compass? Yes - GUI 
+
+MongoDB 
+  - Server [Data is stored]
+  - Client [Access and use data]
+
+mongodb://127.0.0.1:27017 server address
+
+MongoDB Server
+MongoDB Client
+MongoDB Compass
+
+Oracle, MySql, SqlServer          MongoDB
+------------------------------------------
+Database                          Database
+Tables                            Collection
+Records                           Document
+Fields                            Fields
+Joins                             Embedded Documents
+
+CRUD Operations
+- create
+- read
+- update
+- delete
+
+Create Database
+  use databaseName
+Create a Collection [Table]
+  db.createCollection("tableName",{option})
+  db.createCollection("tableName")
+
+Options
+- autoIndexId     true | false
+- max             number [limit for number of Records : 5]
+- capped          true | false [capped = true, false]
+- size            space in memory : bytes 1024 x 1024 = 10,48,576 1mb - allow [4mb] in bytes 4194304
+
+db.tableName.find({query}).pretty()
+
+Name:"Nike"        equals
+Price:"4500.00"    equals
+
+$gt 
+$lt
+$gte
+$lte
+$ne
+$rename
+$set
+$unset  
+
+Database
+Table
+Records
+
+insertOne
+insertMany
+
+updateOne
+updateMany
+
+deleteOne
+deleteMany
+
+find({})
+
+
+Node.js | Express    = build APIs
+Server Script - Interact with Database
+Create API - request methods : fetching, submit, update,delete
+jQuery, React.js
+
+
+Server Side Scripting
+- technique, where scripts are deployed on server in order to generate a response customized
+  for every client request.
+- CGI
+- JSP, PHP, ASP, ASP.NET, Node.js
+  Java, VB, C#,           JavaScript
+
+- Request object
+- Response object
+- Session object
+- Application
+- Cookies 
+
+Node.js Open Source, Cross Platform, JavaScript Based
+- Modular Approach
+- Single Threaded with non-blocking
+- audio, video streaming sites - netflix, amazon prime, spotify.
+- no buffering
+
+install http Module to configure server and status code
+
+- Client sends Data in the form of
+  - form body     form[key, value] - POST
+  - query string  form                - GET
+  - Cookies       
+
+  Request is used by server to fetch details from client
+  - form body, query string, Cookies.
+
+  Response is used by server to send response to client
+  - html, files, cookie, json, xml etc..
+
+Response Contains 
+- header   type of content, status code
+- body     content
+
+Node Js uses a JavaScript Compiler Called - V8 Compiler
+
+Sync  Blocking
+Async UnBlocking
+
+Node.js with MongoDB
+
+node.js requires mongodb drivers to connect with mongodb
+Oracle
+MySql
+Sql Server
+
+CRUD Operations
+
+
+API 
+Express - Middleware 
+- It can handle the request method like - GET,POST,PUT,DELETE,PATCH.
+
+- RPC's
+- MOM
+- Database
+- TPM
+- MB
+
+Debugger - Fiddler, Postman - these allow handle other request also.
+
+   Express
+
+- Request methods
+- Serve static files
+- bodyparser                      - npm install body-parser but now you don't need this 
+- cors

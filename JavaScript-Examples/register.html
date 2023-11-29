@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Input</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script>
+   function AddClick(){
+    document.getElementById("lblName").innerHTML = document.getElementById("txtName").value;
+    document.getElementById("lblPrice").innerHTML = document.getElementById("txtPrice").value;
+    document.getElementById("lblShippedTo").innerHTML = document.getElementById("txtShippedTo").value;
+    checkbox = document.getElementById("InStock");
+    status = "";
+    if(checkbox.checked) {
+      status = "Available";
+    } else {
+      status = "Out of Stock";
+    }
+    document.getElementById("lblStock").innerHTML = status;
+   }
+  </script>
+</head>
+<body class="container-fluid">
+    <div class="mt-4">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#register">Add New Product</button>
+      <div class="modal fade" id="register">
+        <div class="modal-dailog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Add New Product</h3>
+              <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <dl>
+                <dt>Name</dt>
+                <dd>
+                  <input type="text" id="txtName" class="form-control">
+                </dd>
+                <dt>Price</dt>
+                <dd>
+                  <input type="text" id="txtPrice" class="form-control">
+                </dd>
+                <dt>Shipped to</dt>
+                <dd>
+                  <select class="form-select" id="ShippedTo">
+                    <option>Delhi</option>
+                    <option>Hyderabad</option>
+                  </select>
+                </dd>
+                <dt>In Stock</dt>
+                <dd class="form-check form-switch">
+                  <input type="checkbox" id="Instock" class="form-check-input"> Yes
+                </dd>
+              </dl>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" onclick="AddClick()">Add</button>
+              <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="mt-3">
+    <dl class="row">
+      <dt class="col-2">Name</dt>
+      <dd class="col-10" id="lblName"></dd>
+      <dt class="col-2">Price</dt>
+      <dd class="col-10" id="lblPrice"></dd>
+      <dt class="col-2">Shipped to</dt>
+      <dd class="col-10" id="lblShippedTo"></dd>
+      <dt class="col-2">Stock</dt>
+      <dd class="col-10" id="lblStock"></dd>
+    </dl>
+  </div>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

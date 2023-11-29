@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Touch Events</title>
+    <script>
+      function MoveImage(e){
+        var imgShirt = document.getElementById("imgShirt");
+        imgShirt.style.position = "fixed";
+        imgShirt.style.left = Math.round(e.touches[0].clientX) + "px";
+        imgShirt.style.top = Math.round(e.touches[0].clientY) + "px";
+        console.log(Math.round(e.touches[0].clientX));
+        // for(var property in e.touches[0]){
+        //   console.log(property);
+        // }
+      }
+      // function ShoeTouched(){
+      //   document.write(`
+      //   Name : Nike Casuals <br>
+      //   Price : 5600.44 <br>
+      //   Stock : Available
+      //   `)
+      // }
+      // function ShirtTouched(){
+      //   document.write(`
+      //   Name : H&M T-Shirts <br>
+      //   Price : 2999.99 <br>
+      //   Stock : Available
+      //   `)
+      // }
+    </script>
+  </head>
+  <body ontouchmove="MoveImage(event)">
+    <img id="imgShoe" src="../assets/Shoe.jpeg" width="100" height="100">
+    <!-- <p>Touch Product Image</p>
+    <div>
+      <img ontouchstart="ShoeTouched()" id="imgShoe" src="../assets/Shoe.jpeg" width="100" height="100">
+      <img ontouchstart="ShirtTouched()" id="imgShirt" src="../assets/T-Shirts.jpg" width="100" height="100">
+    </div> -->
+  </body>
+</html>

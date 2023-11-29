@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Text Effects</title>
+        <style>
+            @media (orientation: landscape) {
+                ol {
+                    list-style: none;
+                    display: flex;
+                }
+                li {
+                    margin-right: 50px;
+                    border: 2px solid;
+                    padding: 10px;
+                    border-radius: 10px;
+                    width: 200px;
+                    text-align: center;
+                }
+                @media (orientation: portrait) {
+                    ol {
+                        list-style: none;
+                        display: block;
+                    }
+                    li {
+                        margin-bottom: 20px;
+                        padding: 10px;
+                        border: 2px solid;
+                        border-radius: 10px;
+                        width: 200px;
+                        text-align: center;
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <ol>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ol>
+    </body>
+</html>

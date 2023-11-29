@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Toolbar</title>
+        <link rel="stylesheet" href="../fonts/css/all.css">
+        <style>
+            ul {
+                list-style: none;
+                
+            }
+            li {
+                width: 120px;
+                background-color: darkcyan;
+                color: white;
+                border-radius: 20px;
+                border: 2px solid black;
+                padding: 20px;
+                margin-bottom: 20px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            @media screen and (orientation: landscape) {
+                ul {
+                    display: flex;
+                }
+                li {
+                    margin-left: 30px;
+                }
+            }
+            @media screen and (orientation: portrait) {
+                ul {
+                    display: block;
+                    background-color: darkcyan;
+                    width: 20px;
+                    margin-left: -60px;
+                }
+                ul:hover {
+                    margin-left: 0px;
+                    transition: 2s;
+                }
+                .menuItems {
+                    display: none;
+                }
+                .menuItems {
+                    display: none;
+                }
+                li {
+                    width: 20px;
+                    border: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li> <span class="fas fa-home"></span> <span class="menuItems">Home</span></li>
+            <li> <span class="fa fa-globe"></span> <span class="menuItems">Network</span></li>
+            <li> <span class="fa fa-envelope"></span> <span class="menuItems">Contact</span></li>
+            <li> <span class="fab fa-facebook"></span> <span class="menuItems">Social</span></li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Timer</title>
+  <script>
+    function ShowTime() {
+      var now = new Date();
+      document.getElementById("msg").innerHTML = now.toLocaleTimeString();
+    }
+    var time;
+    function bodyload() {
+      time = setInterval(ShowTime, 1000);
+    }
+    function StartClick() {
+      bodyload();
+    }
+    function StopClick(){
+      clearInterval(time);
+    }
+  </script>
+</head>
+
+<body onload="bodyload()">
+  <h1 align="center" id="msg"></h1>
+  <div align="center">
+    <button onclick="StartClick()">Start</button>
+    <button onclick="StopClick()">Stop</button>
+  </div>
+</body>
+
+</html>

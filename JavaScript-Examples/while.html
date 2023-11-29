@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loops</title>
+    <script>
+        var products = [
+            {Name: "JBL Speaker", Price: "999.99", Photo: "../assets/speaker.jpeg"},
+            {Name: "Nike Casuals", Price: "10999.99", Photo: "../assets/Shoe.jpeg"}
+        ];
+        function bodyload(){
+            var tbody = document.getElementById("tbody");
+            for(var item of products)
+            {
+                var tr = document.createElement("tr");
+                var tdName = document.createElement("td");
+                var tdPrice = document.createElement("td");
+                var tdPhoto = document.createElement("td");
+
+                tdName.innerHTML = item.Name;
+                tdPrice.innerHTML = item.Price;
+
+                var img = document.createElement("img");
+                img.src = item.Photo;
+                img.width = "50";
+                img.height = "50";
+
+                tdPhoto.appendChild(img);
+
+                tr.appendChild(tdName);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdPhoto);
+
+                tbody.appendChild(tr);
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <table border="1" width="400">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Preview</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+</html>

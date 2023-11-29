@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamic</title>
+    <script>
+      var categories = ["All", "Electronics", "Fashion", "Footwear"];
+      function bodyload() {
+        var checkList = document.getElementById("checkList");
+        for(var item of categories) 
+        {
+          var li = document.createElement("li");
+          var span = document.createElement("span");
+          var input = document.createElement("input");
+          input.type = "checkbox";
+          span.innerHTML = item;
+          li.appendChild(input);
+          li.appendChild(span);
+          checkList.appendChild(li);
+        }
+      }
+    </script>
+  </head>
+  <body onload="bodyload()">
+    <h3>Check List</h3>
+    <ul id="checkList">
+
+    </ul>
+  </body>
+</html>

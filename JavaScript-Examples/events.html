@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Events</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script>
+    function ChooseColor(obj){
+      // alert(obj.id);
+      h1 = document.querySelector("h1");
+      switch (obj.id) {
+        case "green":
+          h1.className = "mt-4 text-success";
+          break;
+        case "blue":
+          h1.className = "mt-4 text-info";
+          break;
+        case "red":
+          h1.className = "mt-4 text-danger";
+          break;
+      }
+    }
+  </script>
+  <style>
+    div:hover {
+      cursor: grab;
+    }
+  </style>
+</head>
+
+<body class="container-fluid">
+  <div class="container mt-3 d-flex w-50">
+    <div id="green" class="bg-success w-50 text-center text-white" onclick="ChooseColor(this)">Success</div>
+    <div id="blue" class="bg-info w-50 text-center text-white" onclick="ChooseColor(this)">Info</div>
+    <div id="red" class="bg-danger w-50 text-center text-white" onclick="ChooseColor(this)">Danger</div>
+  </div>
+  <h1 align="center" class="mt-4">Sample Text</h1>
+</body>
+
+</html>

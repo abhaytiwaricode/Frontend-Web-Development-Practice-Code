@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Events</title>
+  <script>
+    function InsertClick(e){
+      for(var property in e) {
+        document.write(property + "<br>");
+      }
+    }
+    // function InsertClick(obj, e) {
+    //   document.write(`Button Name : ${obj.name} <br> Value : ${obj.value} <br> Id : ${obj.id} <br> Class : ${obj.className} <br> X Position : ${e.clientX}`);
+    // }
+  </script>
+</head>
+
+<body>
+  <button name="btnInsert" value="Insert" id="InsButton" class="btn btn-primary" onclick="InsertClick(this, event)">Insert</button>
+</body>
+
+</html>

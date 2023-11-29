@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(function(){
+        // $("#head1").html("jQuery");
+        // $(".msg").html("JavaScript Library");
+        // $("p").html("Write less Do more.."); 
+        $("button").click(function(){
+          // $("p").html(`Hello ! ${$("#username").val()}`);
+          var username = $("#username").val();
+          $("p").text(`Hello ! Mr.${username}`);
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <!-- <h2 id="head1"></h2>
+    <div class="msg"></div> -->
+    Your Name : <input type="text" id="username">
+    <button>Submit</button>
+    <p></p>
+  </body>
+</html>

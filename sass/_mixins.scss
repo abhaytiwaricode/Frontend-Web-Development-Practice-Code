@@ -1,0 +1,6 @@
+@mixin SetEffects {
+  .container {
+    background-color: $bgcolor;
+    border: $border;
+  }
+}

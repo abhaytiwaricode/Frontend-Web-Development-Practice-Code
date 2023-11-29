@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Output</title>
+    <script>
+      function deleteClick(){
+        x = confirm("Record will be deleted");
+        msg = document.getElementById("msg");
+        if(x==true) {
+          msg.innerHTML="<font color='red'>Record Deleted Successfully!</font>";
+        } else {
+          msg.innerText="Canceled!"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Output Demo</h3>
+    <button onclick="deleteClick()">Delete</button>
+    <div id="msg"></div>
+  </body>
+</html>

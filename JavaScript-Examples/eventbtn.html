@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Events</title>
+  <script>
+    function DataBase(obj){
+      switch(obj.name){
+        case "Insert" :
+          document.write("Record Inserted..");
+          break;
+        case "Update" :
+          document.write("Record Updated..");
+          break;
+        case "Delete" :
+          document.write("Record Deleted..");
+          break;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <button name="Insert" onclick="DataBase(this)">Insert</button>
+  <button name="Update" onclick="DataBase(this)">Update</button>
+  <button name="Delete" onclick="DataBase(this)">Delete</button>
+</body>
+
+</html>

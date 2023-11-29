@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>String Demo</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+      function VerifyCard() {
+        var cardnumber = document.getElementById("txtCard").value;
+        var imgCard = document.getElementById("imgCard");
+        if(cardnumber.startsWith("43")) {
+          imgCard.src="../assets/master.png";
+        } else {
+          imgCard.src="../assets/mastercard.jpg"
+        }
+      }
+      function VerifySite() {
+        var site = document.getElementById("txtSite").value;
+        var msg = document.getElementById("msg");
+        if(site.endsWith("org")){
+          msg.className="bi bi-check2-circle input-group-text text-success";
+        } else {
+          msg.className="bi bi-x-circle input-group-text text-danger";
+        }
+      }
+    </script>
+  </head>
+  <body class="container-fluid">
+    <h3>Payment</h3>
+    <div class="input-group">
+      <label class="input-group-text">Card Number</label>
+      <input type="text" class="form-control" onkeyup="VerifyCard()" id="txtCard">
+      <span class="input-group-text">
+        <img id="imgCard" width="100" height="50">
+      </span>
+    </div>
+    <div class="input-group mt-3">
+      <label class="input-group-text">Organization Website</label>
+      <input type="text" class="form-control" onkeyup="VerifySite()" id="txtSite">
+      <span class="input-group-text" id="msg">
+        
+      </span>
+    </div>
+  </body>
+</html>

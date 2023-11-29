@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <script>
+      function LoginClick(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if(username == "abhay" && password == "abhay24"){
+          location.href = "../public/e-com.html";
+        } else {
+          location.href = "../JavaScript-Examples/error.html";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Login</h2>
+    <dl>
+      <dt>User Name</dt>
+      <dd><input type="text" id="username"></dd>
+      <dt>Password</dt>
+      <dd><input type="password" id="password"></dd>
+    </dl>
+    <button onclick="LoginClick()">Login</button>
+  </body>
+</html>

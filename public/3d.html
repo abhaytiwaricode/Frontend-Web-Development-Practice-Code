@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS 3D</title>
+    <style>
+      .container {
+        width: 100px;
+        height: 100px;
+        border: 5px solid darkcyan;
+        background-image: url(../assets/Shoe.jpg);
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+        margin: 20px;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        border: 1px dotted darkcyan;
+      }
+      .transform-effects {
+        transform: scale3d(1,1,1);
+        transition: 2s;
+      }
+      .transform-effects:hover {
+        transform: scale3d(1.5,2,1.5);
+        transition: 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>3D Transform</h2>
+    <div class="container">
+      <img class="transform-effects" src="../assets/Shoe.jpg">
+    </div>
+  </body>
+</html>

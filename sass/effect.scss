@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixins";
+
+@include SetEffects;
+
+body {
+  box-shadow: 10px 10px 4px red;
+  width: 90%;
+  height: 300px;
+}

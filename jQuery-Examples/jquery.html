@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>JQuery UI</title>
+  <link rel="stylesheet" href="../node_modules/jquery-ui/themes/base/all.css">
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script src="../node_modules/jquery-ui/dist/jquery-ui.js"></script>
+  <script>
+    $(function(){
+      $("#dob").datepicker();
+      $("#pic").draggable();
+      $("#pic").resizable();
+    })
+  </script>
+</head>
+<body>
+  Date of Birth : <input type="text" id="dob">
+  <br> <br>
+  <img src="../assets/Shoe.jpeg" id="pic" width="50" height="50">
+</body>
+</html>

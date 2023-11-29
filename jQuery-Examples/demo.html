@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Demo</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(function(){
+        $("button").click(function(){
+          $("#lblName").html($("#txtName").val());
+          $("#lblPrice").html($("#txtPrice").val());
+          $("#lblCity").html($("#lstCities").val());
+          if($("#optStock").prop("checked"))
+          {
+            $("#lblStock").html("Available");
+          } else {
+            $("#lblStock").html("Out of Stock");
+          }
+        })
+      })
+    </script>
+  </head>
+  <body class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <h2>Register</h2>
+          <dl>
+            <dt>Name</dt>
+            <dd><input type="text" id="txtName" class="form-control"></dd>
+            <dt>Price</dt>
+            <dd><input type="text" id="txtPrice" class="form-control"></dd>
+            <dt>Shipped To</dt>
+            <dd>
+              <select id="lstCities" class="form-select">
+                <option>Lucknow</option>
+                <option>Hyderabad</option>
+              </select>
+            </dd>
+            <dt>In Stock</dt>
+            <input type="checkbox" id="optStock"> Yes
+          </dl>
+          <button class="btn btn-primary">Submit</button>
+      </div>
+      <div class="col-9">
+        <h3>Details</h3>
+        <table class="table table-hover">
+          <tr>
+            <td>Name</td>
+            <td id="lblName"></td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td id="lblPrice"></td>
+          </tr>
+          <tr>
+            <td>Shipped To</td>
+            <td id="lblCity"></td>
+          </tr> 
+          <tr>
+            <td>Stock</td>
+            <td id="lblStock"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

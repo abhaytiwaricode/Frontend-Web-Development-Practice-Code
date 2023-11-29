@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Location</title>
+    <script>
+      function GetDetails(){
+        document.getElementById("server").innerHTML = location.host;
+        document.getElementById("protocol").innerHTML = location.protocol;
+        if(location.protocol == "http:") {
+          document.getElementById("status").innerHTML = "You are accessing from Web Server";
+        } else {
+          document.getElementById("status").innerHTML = "You are accessing from File Server";
+        }
+        document.getElementById("port").innerHTML = location.port;
+        document.getElementById("url").innerHTML = location.href;
+        document.getElementById("path").innerHTML = location.pathname; 
+      }
+    </script>
+    <style>
+      dt {
+        font-weight: bold;
+        background-color: gray;
+        color: white;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="GetDetails()">Get Location Details</button>
+    <dl>
+      <dt>Server | IP Address</dt>
+      <dd id="server"></dd>
+      <dt>Protocol</dt>
+      <dd id="protocol"></dd>
+      <dd id="status"></dd>
+      <dt>Port</dt>
+      <dd id="port"></dd>
+      <dt>URl</dt>
+      <dd id="url"></dd>
+      <dt>Path</dt>
+      <dd id="path"></dd>
+    </dl>
+  </body>
+</html>

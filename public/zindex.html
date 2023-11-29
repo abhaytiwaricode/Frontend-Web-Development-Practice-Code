@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Z-Index</title>
+    <style>
+      .yellow-box {
+        width: 400px;
+        height: 400px;
+        background-color: yellow;
+        border: 2px solid;
+        position: absolute;
+        z-index: 0;
+        margin-left: 100px;
+        margin-top: 50px;
+      }
+      .green-box {
+        width: 900px;
+        height: 100px;
+        background-color: green;
+        border: 2px solid;
+        position: absolute;
+        margin-top: 100px;
+        z-index: 1;
+      }
+      .red-box {
+        width: 40px;
+        height: 500px;
+        background-color: red;
+        border: 2px solid;
+        position: absolute;
+        margin-left: 200px;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="green-box">
+
+    </div>
+    <div class="red-box">
+
+    </div>
+    <div class="yellow-box">
+
+    </div>
+  </body>
+</html>

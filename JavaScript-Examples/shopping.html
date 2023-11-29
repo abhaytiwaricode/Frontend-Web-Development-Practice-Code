@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <script>
+    var categories = ["Select a Category", "Electronics", "Footwear", "Fashion"];
+
+    var products = [];
+    var electronics = ["Select Electronic Product", "JBL Speaker", "Earpods"];
+    var footwear = ["Select Footwear", "Nike Casuals", "Lee Cooper Boot"];
+    var fashion = ["Select Fashion Product", "T-Shirt Black", "T-Shirt Blue"];
+
+    var data = [
+      { Name: "JBL Speaker", Price: "999.99", Photo: "../assets/speaker.jpeg" },
+      { Name: "Earpods", Price: "1199.99", Photo: "../assets/earpods.jpg" },
+      { Name: "Nike", Price: "10999.99", Photo: "../assets/Shoe.jpeg" },
+      { Name: "Campus", Price: "10999.99", Photo: "../assets/Shoe.jpg" },
+      { Name: "T-shirt Black", Price: "399.99", Photo: "../assets/T-Shirts.jpg" },
+      { Name: "T-shirt Blue", Price: "399.99", Photo: "../assets/T-Shirts1.jpg" }
+    ];
+
+    var searchedProduct;
+    var cartItems = [];
+
+    function GetCartItemsCount() {
+      document.getElementById("lblCount").innerHTML = cartItems.length;
+    }
+    function LoadCartItems() {
+      var tbody = document.getElementById("tbody");
+      tbody.innerHTML = "";
+      for (var item of cartItems) {
+        var tr = document.createElement("tr");
+        var tdName = document.createElement("td");
+        var tdPrice = document.createElement("td");
+        var tdPhoto = document.createElement("td");
+
+        tdName.innerHTML = item.Name;
+        tdPrice.innerHTML = item.Price;
+
+        var img = document.createElement("img");
+        img.src = item.Photo;
+        img.width = "50";
+        img.height = "50";
+
+        tdPhoto.appendChild(img);
+
+        tr.appendChild(tdName);
+        tr.appendChild(tdPrice);
+        tr.appendChild(tdPhoto);
+
+        tbody.appendChild(tr);
+      }
+    }
+    function AddToCartClick() {
+      cartItems.push(searchedProduct);
+      GetCartItemsCount();
+      LoadCartItems();
+      alert("Item Added to Cart.");
+    }
+    function LoadCategories() {
+      var lstCategories = document.getElementById("lstCategories");
+      for (var item of categories) {
+        var option = document.createElement("option");
+        option.text = item;
+        option.value = item;
+        lstCategories.appendChild(option);
+      }
+    }
+    function LoadProducts() {
+      var lstProducts = document.getElementById("lstProducts");
+      lstProducts.innerHTML = "";
+      for (var item of products) {
+        var option = document.createElement("option");
+        option.text = item;
+        option.value = item;
+        lstProducts.appendChild(option);
+      }
+    }
+    function CategoryChanged() {
+      var selectedCategory = document.getElementById("lstCategories").value;
+      switch (selectedCategory) {
+        case "Electronics":
+          products = electronics;
+          LoadProducts();
+          break;
+        case "Footwear":
+          products = footwear;
+          LoadProducts();
+          break;
+        case "Fashion":
+          products = fashion;
+          LoadProducts();
+          break;
+        default:
+          products = ["Please Select Category"];
+          LoadProducts();
+          break;
+      }
+    }
+    function productChanged() {
+      var productName = document.getElementById("lstProducts").value;
+      searchedProduct = data.find(function (item) {
+        return item.Name == productName;
+      })
+      // console.log(JSON.stringify(searchedProduct));
+      document.getElementById("lblName").innerHTML = searchedProduct.Name;
+      document.getElementById("lblPrice").innerHTML = "&#8377;" + searchedProduct.Price;
+      document.getElementById("imgProduct").src = searchedProduct.Photo;
+    }
+    function bodyload() {
+      LoadCategories();
+      GetCartItemsCount();
+    }
+  </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+  <header class="bg-danger p-2 text-center text-white">
+    <h2><span class="bi bi-cart"></span> Amazon Shopping</h2>
+  </header>
+  <section>
+    <div class="row">
+      <div class="col-3">
+        <div class="mt-3">
+          <label class="form-label">Select a Category</label>
+          <div>
+            <select onchange="CategoryChanged()" class="form-select" id="lstCategories">
+
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <label class="form-label">Select a Product</label>
+          <div>
+            <select onchange="productChanged()" class="form-select" id="lstProducts">
+
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <label class="form-label">Preview</label>
+          <div class="card">
+            <div class="card-header text-center">
+              <h3 id="lblName"></h3>
+            </div>
+            <div class="card-body text-center">
+              <img id="imgProduct" width="200" height="200">
+              <p id="lblPrice"></p>
+            </div>
+            <div class="card-footer text-center d-grid">
+              <button class="btn btn-danger" onclick="AddToCartClick()">
+                <span class="bi bi-cart4"></span>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-7">
+
+      </div>
+      <div class="col-2">
+        <div class="mt-3 d-grid">
+          <button class="btn btn-warning" data-bs-target="#cart" data-bs-toggle="modal">
+            <span id="lblCount" class="badge bg-dark"></span> <span class="bi bi-cart3"></span>
+            Your Cart Items
+          </button>
+          <div class="modal fade show" id="cart">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3>Your Cart Items</h3>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Preview</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button data-bs-dismiss="modal" class="btn btn-primary">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

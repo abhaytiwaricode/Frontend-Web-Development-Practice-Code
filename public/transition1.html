@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transition</title>
+    <style>
+      .container {
+        overflow: hidden;
+      }
+      @keyframes slide {
+        from {
+          margin-left: 100%;
+        }
+        50% {
+          transform: scale(2);
+        }
+        70% {
+          transform: scale(1);
+        }
+        to {
+          margin-left: 0%;
+          transform: scale(1);
+        }
+      }
+      h2 {
+        animation-name: slide;
+        animation-duration: 5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>CSS Animation</h2>
+    </div>
+  </body>
+</html>

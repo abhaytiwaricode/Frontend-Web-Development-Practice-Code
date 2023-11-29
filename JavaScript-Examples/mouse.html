@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Events</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script>
+  function Animate(e){
+    var pic = document.getElementById("pic");
+    pic.style.position="fixed"
+    pic.style.left= e.clientX + "px";
+    pic.style.top= e.clientY + "px";
+  }
+  </script>
+</head>
+
+<body class="conatiner-fluid" onmousemove="Animate(event)">
+  <div style="height: 1000px;">
+    
+  </div>
+  <img id="pic" src="../assets/speaker.jpeg" width="50" height="50">
+</body>
+
+</html>

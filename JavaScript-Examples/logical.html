@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            var users = [
+                {
+                    UserName: 'abhay',
+                    Password: 'abhay24'
+                },
+                {
+                    UserName: 'raj',
+                    Password: 'raj13'
+                }
+            ]
+            function LoginClick(){
+                var username = document.getElementById("txtName").value;
+                var password = document.getElementById("txtPassword").value;
+                var searchedUser = users.find(function(user){
+                    return user.UserName == username && user.Password == password
+                })
+                if(username == searchedUser.UserName && password == searchedUser.Password) {
+                    document.write("Login Success..");
+                } else {
+                    alert("Invalid User Name / Password");
+                }
+            }
+        </script>
+    </head>
+    <body class="container-fluid">
+        <fieldset>
+            <legend>User Login</legend>
+            <dl class="form-control w-25">
+                <dt class="form-text">User Name</dt>
+                <dd><input type="text" id="txtName" class="form-control"></dd>
+                <dt class="form-text">Password</dt>
+                <dd><input type="password" id="txtPassword" class="form-control"></dd>
+            </dl>
+            <button onclick="LoginClick()" class="btn btn-primary">Login</button>
+        </fieldset>
+    </body>
+</html>

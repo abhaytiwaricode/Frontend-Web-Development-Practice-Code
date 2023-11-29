@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List</title>
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <script>
+    $(function (){
+      $("#container").mousemove(function(e){
+        console.log(`X = ${e.clientX},Y = ${e.clientY}`);
+      })
+      $("button").click(function(e){
+        console.log(e.target.id);
+      })
+    })
+  </script>
+</head>
+<body>
+  <div id="container" style="height: 100px;">
+    
+  </div>
+  <button id="btnSubmit" name="Submit">Submit</button>
+</body>
+</html>

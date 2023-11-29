@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <script>
+    var products = [
+      { Name: "JBL Speaker", Price: 4400.33, Photo: "../assets/speaker.jpeg" },
+      { Name: "boAt Earbods", Price: 2400.44, Photo: "../assets/earpods.jpg" },
+      { Name: "T-Shirt", Price: 5999.55, Photo: "../assets/T-Shirts.jpg" },
+      { Name: "Nike Casuals", Price: 1599.66, Photo: "../assets/Shoe.jpeg" },
+      { Name: "Smartwatch", Price: 4600.77, Photo: "../assets/Smartwatch.jpg" },
+      { Name: "Watches", Price: 2400.88, Photo: "../assets/Watches.jpg" }
+    ]
+    function DisplayProduct(index) {
+      document.getElementById("lblName").innerHTML = products[index].name;
+      document.getElementById("lblPrice").innerHTML = products[index].Price;
+      document.getElementById("pic").src = products[index].Photo;
+    }
+    function bodyload() {
+      DisplayProduct(0);
+    }
+    var count = 0;
+    function NextClick() {
+      if (count < products.length - 1) {
+        count++;
+        DisplayProduct(count);
+        document.getElementById("imageRange").value = count;
+      }
+    }
+    function PreviousClick() {
+      if (count > 0) {
+        count--;
+        DisplayProduct(count);
+        document.getElementById("imageRange").value = count;
+      }
+    }
+    function ChangeImage() {
+      var slider = document.getElementById("imageRange");
+      DisplayProduct(slider.value);
+    }
+  </script>
+</head>
+<body onload="bodyload()">
+  <div class="mt-3 justify-content-center align-item-lg-center d-flex">
+    <div class="card w-75">
+      <div class="card-header text-center">
+        <h3 id="lblName"></h3>
+        <div>
+          <input onchange="ChangeImage()" id="imageRange" type="range" class="form-range" value="0" min="0" max="5">
+        </div>
+      </div>
+      <div class="card-body text-center">
+        <img id="pic" class="w-100" height="300">
+        <p id="lblPrice"></p>
+      </div>
+      <div class="card-footer text-center">
+        <button onclick="PreviousClick()" class="btn btn-outline-danger"><span
+            class="bi bi-arrow-left-circle"></span></button>
+        <button onclick="NextClick()" class="btn btn-outline-danger"><span
+            class="bi bi-arrow-right-circle"></span></button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

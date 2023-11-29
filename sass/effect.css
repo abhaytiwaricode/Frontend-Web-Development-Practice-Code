@@ -1,0 +1,12 @@
+.container {
+  background-color: yellow;
+  border: 2px solid darkcyan;
+}
+
+body {
+  box-shadow: 10px 10px 4px red;
+  width: 90%;
+  height: 300px;
+}
+
+/*# sourceMappingURL=effect.css.map */
